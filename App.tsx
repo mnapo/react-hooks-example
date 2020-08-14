@@ -1,12 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { Text, Button, TextInput } from 'react-native-paper';
 
-export default function App() {
+export default function App(props) {
+  const [counter, setCounter] = useState(0);
+  const [text, setText] = useState("");
+
+  const incrementCounter = () => {
+    setCounter(counter+1);
+  };
+
+  const handleTextChange = (text) => {
+    setText(text);
+  };
+
+  useEffect(() => {
+    console.log(props);
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text>contador: {counter}</Text>
+      <Button onPress = {incrementCounter}>Pepito</Button>
+      <View>
+        <Text>{text}</Text>
+        <TextInput value={text} onChangeText={handleTextChange}></TextInput>
+      </View>
     </View>
   );
 }

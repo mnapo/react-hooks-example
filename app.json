@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "redux-react-example",
-    "slug": "redux-react-example",
+    "name": "react-hooks-example",
+    "slug": "react-hooks-example",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
